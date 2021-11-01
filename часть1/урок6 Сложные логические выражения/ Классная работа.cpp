@@ -49,3 +49,22 @@ int main() {
     cout << "YES";
   else cout << "NO";
 }
+
+//Вовочка, который любит постоянство, считает хорошими двузначные числа в которых или обе цифры четные или обе нечетные. Дано двузначное число, определите, является ли оно хорошим по мнению Вовочки, который любит постоянство.
+#include <iostream> 
+using namespace std;
+int main (){
+  int N;
+  cin >> N;
+ int dec = N /10;
+ int ones = N % 10;
+  bool dec_check = ((dec % 2) ==0);
+  bool ones_check = ((ones % 2) ==0);
+  if ((dec_check && ones_check) ||
+      ((!dec_check) && (! ones_check))) {
+    cout << "LIKE\n";
+  }
+  else {
+    cout << "DISLIKE\n";
+  }
+}
