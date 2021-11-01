@@ -53,4 +53,70 @@ int main() {
   cout << sum;
 }
 
-//
+//Дана последовательность целых чисел, оканчивающаяся нулём. Определите, сколько элементов этой последовательности больше предыдущего элемента. Ноль числом последовательности не считается.
+#include <iostream>
+using namespace std;
+int main() {
+  int n, max = 100000, count = 0;
+  do {
+    cin >> n;
+    if (n && n > max) count++;
+    { max = n; }
+  } while (n);
+  { cout << count << endl; }
+  return 0;
+}
+
+//Известны оценки по информатике каждого ученика класса, состоящего из n человек. Неоходимо определить количество пятёрок.
+#include <iostream>
+using namespace std;
+int main() {
+  int i = 0, N, a, count = 0;
+  cin >> N;
+  while (i < N) {
+    cin >> a;
+    if (a == 5) count++;
+    i++;
+  }
+  cout << count << "\n";
+  system("pause");
+  return 0;
+}
+
+//Дана последовательность целых чисел, оканчивающаяся числом −1. Необходимо определить, присутствует ли в последовательности хотя бы одна пара одинаковых «соседних» чисел. Число −1 членом последовательности не является.
+#include <iostream>
+using namespace std;
+int main() {
+  int a, b;
+  bool yes = false;
+  while (a != -1) {
+    cin >> a;
+    if (a == b) yes = true;
+    b = a;
+  }
+  if (yes)
+    cout << "YES";
+  else
+    cout << "NO";
+  system("pause");
+  return 0;
+}
+
+//Дана непустая последовательность целых чисел, оканчивающаяся числом 100. Необходимо определить, есть ли в последовательности число 77.
+#include <iostream>
+using namespace std;
+int main() {
+  setlocale(LC_ALL, "Russian");
+  int currentNumber = 0;
+  bool isNumberInSequence = false;
+  while (currentNumber != 100) {
+    cin >> currentNumber;
+    if (currentNumber == 77) isNumberInSequence = true;
+  }
+  if (isNumberInSequence)
+    cout << "YES" << endl;
+  else
+    cout << "NO" << endl;
+  system("pause");
+  return 0;
+}
