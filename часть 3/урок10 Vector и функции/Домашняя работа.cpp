@@ -22,7 +22,37 @@ int main(){
 }
 
 //Напишите функцию vector<int> odds(int n), которая создаст вектор, состящий из первых n натуральных нечетных чисел и вернёт его из функции.
+#include <iostream>
+#include <vector>
+ 
+using namespace std;
+vector<int> odds(int n) {
 
+  vector<int> arr(n);
+
+  int num = 1;
+
+  for (int i = 0; i < n; i++) {
+
+    arr[i] = num;
+
+    num += 2;
+
+  }
+
+  return arr;
+
+}
+
+
+int main() {
+  int n;
+  cin >> n;
+  vector<int> a = odds(n);
+  for (int i = 0; i < a.size(); i++)
+    cout << a[i] << " ";
+  return 0;
+}
 
 
 //Напишите функцию vector<int> sum_vectors(vector<int>, vector<int>), которая складывает соответствующие элементы двух массивов одинаковой длины и возвращает как результат новый массив.
