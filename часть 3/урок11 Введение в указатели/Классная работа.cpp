@@ -70,3 +70,26 @@ cout << (num / nod) << " " << (dem / nod) <<
 endl;
 return 0;
 }
+
+
+//Напишите функцию void insert(int[], int*, int position, int number), которая будет добавлять в массив на позицию position новое значение number. Размер массива таже должен измениться.
+#include <iostream>
+using namespace std;
+void insert(int arr[], int* n, int position, int number){
+for (int i = (*n); i > position -1; --i){
+  arr[i+1] = arr[i];
+}
+  arr[position] = number;
+  (*n)++;
+}
+int main() {
+  int n, arr[101], position, number;
+  cin >> n;
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+  cin >> position >> number;
+  insert(arr, &n, position, number);
+  for (int i = 0; i < n; i++)
+    cout << arr[i] << " ";
+  return 0;
+}
