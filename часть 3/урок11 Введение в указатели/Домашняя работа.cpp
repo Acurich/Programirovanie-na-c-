@@ -116,3 +116,36 @@ int main()
    return 0;
 
 }
+
+//Дан массив из N целых чисел. Необходимо посчитать, сколько раз в этом массиве встречается максимальный элемент.
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+    int N;
+    cin >> N;
+    if (N == 0) 
+    {
+        cout << "0\n";
+        return 0;
+    }
+    int max, maxcount = 1;
+    cin >> max;
+    for(int i = 1, m; i < N; ++i)
+    {
+        cin >> m;
+        if (max < m)
+        {
+            max = m;
+            maxcount = 1;
+        }
+        else if (max == m)
+        {
+            maxcount++;
+        }
+    }
+    cout << maxcount << endl;
+}
