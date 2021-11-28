@@ -30,3 +30,30 @@ int main() {
 }
 
 //Дан массив целых чисел. Замените все минимальные значения в этом массиве на максимальные в нем же.
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+  int n;
+  cin >> n;
+  double a[100];
+  double max = 0;
+  double min = 0;
+  for(int i =0; i < n; i++){
+    cin >> a[i];
+    if ( a[i] < min ){
+            min = a[i];
+        }
+        if (a[i] > max){
+            max = a[i];
+        }
+  }
+  for (int i = 0; i<n; i++){
+    if (a[i] == min){
+      a[i] = max;
+    }
+  }
+  for (int i = 0; i<n; i++){
+    cout << a[i] << " ";
+  }
+}
