@@ -57,3 +57,62 @@ int main() {
     cout << a[i] << " ";
   }
 }
+
+//Дан массив из N целых чисел. Необходимо посчитать, сколько элементов в этом массиве являются уникальными, т.е. встречаются только один раз.
+
+#include <iostream>
+
+#include <vector>
+
+using namespace std;
+
+int main()
+
+{
+
+   int n, count = 0;
+
+   cin >> n;
+
+   vector<int> v(n);
+
+   for (int i = 0; i < n; ++i){
+
+       cin >> v[i];
+
+   }
+
+   for (int i = 0; i < n; ++i){
+
+       bool flag = false;
+
+       for (int j = 0; j < i; ++j){
+
+           if (v[i] == v[j]){
+
+               flag = true;
+
+           }
+
+       }
+
+       for (int j = i + 1; j < n; ++j){
+
+           if (v[i] == v[j]){
+
+               flag = true;
+
+           }
+
+       }
+
+       if (flag == false){
+         count++;
+
+       }
+
+   }
+  cout << count << " " ;
+   return 0;
+
+}
