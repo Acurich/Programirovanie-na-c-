@@ -54,3 +54,30 @@ int main()
     cout <<counter;
     return 0;
 }
+
+
+//Звание ниндзи  в чем-либо очень почетно. Оно обозначает, что вы достигли вершин мастерства. Что вы можете решать сложные задачи быстро и ловко, используя необычные приемы, доступные только истинному мастеру.
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+int main()
+{
+    string str1;
+        string str2;
+    int m=5,w=0;
+    getline(cin, str1);
+    getline(cin, str2);
+    for (int i = 0; i < str2.size(); i++)
+    {
+        if (str1[i] != str2[i])
+        {
+            w++;
+        }
+    }
+    m =m- w;
+    if (m < 2) {
+        m = 2;
+}
+cout << m;
+}
